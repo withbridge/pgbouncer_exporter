@@ -9,5 +9,5 @@ COPY .build/${OS}-${ARCH}/pgbouncer_exporter /bin/pgbouncer_exporter
 COPY LICENSE                                /LICENSE
 
 USER       nobody
-ENTRYPOINT ["/bin/pgbouncer_exporter"]
+CMD ["/bin/pgbouncer_exporter", "--pgBouncer.connectionString=${PGBOUNCER_EXPORTER_CONNECTION_STRING}"]
 EXPOSE     9127
